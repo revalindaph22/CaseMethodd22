@@ -5,7 +5,7 @@ public class SKPerMataKuliah {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("=============== Hasil Nilai Akademik ===============");
+        System.out.println("================== Hasil Nilai Akademik ==================");
         System.out.print("Nama Mahasiswa : ");
         String NamaMahasiswa = sc.nextLine();
         System.out.print("NIM Mahasiswa  : ");
@@ -73,17 +73,17 @@ public class SKPerMataKuliah {
         System.out.println("\n================ HASIL PENILAIAN AKADEMIK ================");
         System.out.println("Nama : " + NamaMahasiswa);
         System.out.println("NIM  : " + NimMahasiswa);
-        System.out.println("----------------------------------------------------------");
+        System.out.println("------------------------------------------------------------------------------");
         System.out.printf("%-25s %-5s %-5s %-7s %-11s %-10s\n", 
                 "Mata Kuliah", "UTS", "UAS", "Tugas", "Nilai Akhir", "Nilai Huruf");
-        System.out.println("----------------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------------------");
 
         System.out.printf("%-25s %-5.0f %-5.0f %-7.0f %-11.2f %-10s\n",
                 MataKuliah1, NilaiUTS1, NilaiUAS1, NilaiTugas1, NilaiAkhir1, NilaiHuruf1);
         System.out.printf("%-25s %-5.0f %-5.0f %-7.0f %-11.2f %-10s\n",
                 MataKuliah2, NilaiUTS2, NilaiUAS2, NilaiTugas2, NilaiAkhir2, NilaiHuruf2);
 
-        System.out.println("----------------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------------------");
 
         sc.close();
         }
