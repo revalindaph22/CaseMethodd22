@@ -37,6 +37,8 @@ public class SKPerMataKuliah {
         double NilaiAkhir2 = (NilaiUTS2 * 0.3) + (NilaiUAS2 * 0.4) + (NilaiTugas2 * 0.3);
         String NilaiHuruf1;
         String NilaiHuruf2;
+        String Status1;
+        String Status2;
 
         if (NilaiAkhir1 >= 80) {
                 NilaiHuruf1 = "A";
@@ -54,7 +56,7 @@ public class SKPerMataKuliah {
                 NilaiHuruf1 = "E";
             }
 
-                   if (NilaiAkhir2 >= 80) {
+        if (NilaiAkhir2 >= 80) {
                 NilaiHuruf2 = "A";
             } else if (NilaiAkhir2 > 73) {
                 NilaiHuruf2 = "B+";
@@ -70,20 +72,48 @@ public class SKPerMataKuliah {
                 NilaiHuruf2 = "E";
             }
 
+        if (NilaiAkhir1 >= 60) {
+            Status1 = "Lulus";
+        } else {
+            Status1 = "Tidak Lulus";
+        }
+
+                if (NilaiAkhir2 >= 60) {
+            Status2 = "Lulus";
+        } else {
+            Status2 = "Tidak Lulus";
+        }
+
+        String StatusSemester = "";
+
+        if (Status1.equals("Lulus") && Status2.equals("Lulus")) {
+            if ((NilaiAkhir1 >= 70) && (NilaiAkhir2 >= 70)) {
+                StatusSemester = "Lulus";
+            } else {
+                StatusSemester = "Tidak Lulus";
+            }
+        } else {
+            StatusSemester = "Tidak Lulus";
+        }
+
         System.out.println("\n================ HASIL PENILAIAN AKADEMIK ================");
         System.out.println("Nama : " + NamaMahasiswa);
         System.out.println("NIM  : " + NimMahasiswa);
-        System.out.println("------------------------------------------------------------------------------");
-        System.out.printf("%-25s %-5s %-5s %-7s %-11s %-10s\n", 
-                "Mata Kuliah", "UTS", "UAS", "Tugas", "Nilai Akhir", "Nilai Huruf");
-        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------------------------------");
+        System.out.printf("%-25s %-5s %-5s %-7s %-11s %-18s %-23s\n", 
+                "Mata Kuliah", "UTS", "UAS", "Tugas", "Nilai Akhir", "Nilai Huruf","Status");
+        System.out.println("--------------------------------------------------------------------------------------");
 
-        System.out.printf("%-25s %-5.0f %-5.0f %-7.0f %-11.2f %-10s\n",
-                MataKuliah1, NilaiUTS1, NilaiUAS1, NilaiTugas1, NilaiAkhir1, NilaiHuruf1);
-        System.out.printf("%-25s %-5.0f %-5.0f %-7.0f %-11.2f %-10s\n",
-                MataKuliah2, NilaiUTS2, NilaiUAS2, NilaiTugas2, NilaiAkhir2, NilaiHuruf2);
+        System.out.printf("%-26s %-5.0f %-5.0f %-9.0f %-13.2f %-10s %-12s\n",
+                MataKuliah1, NilaiUTS1, NilaiUAS1, NilaiTugas1, NilaiAkhir1, NilaiHuruf1, Status1);
+        System.out.printf("%-26s %-5.0f %-5.0f %-9.0f %-13.2f %-10s %-12s\n",
+                MataKuliah2, NilaiUTS2, NilaiUAS2, NilaiTugas2, NilaiAkhir2, NilaiHuruf2, Status2);
 
-        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------------------------------");
+
+        double RataRata = (NilaiAkhir1+NilaiAkhir2)/2;
+        System.out.println("Rata-rata nilai akhir : " + RataRata);
+        System.out.println("Status Semester : " + StatusSemester);
 
         sc.close();
         }
