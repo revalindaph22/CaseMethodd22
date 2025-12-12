@@ -1,3 +1,4 @@
+package CaseMethod1;
 import java.util.Scanner;
 
 public class InputDataMahasiswa22 {
